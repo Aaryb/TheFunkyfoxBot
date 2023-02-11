@@ -2,14 +2,14 @@ import asyncio
 from pyrogram import filters, Client, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
+from TheFunkyFox import TheFunkyFox as Bot
+from config import OWNER_ID, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
+from TheFunkyFox.modules.helper_func import encode
 
-from bot import Bot
-from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
-from helper_func import encode
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','users','broadcast','batch','genlink','stats']))
+@Bot.on_message(filters.private & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink','stats']))
 async def channel_post(client: Client, message: Message):
-    reply_text = await message.reply_text("Please Wait...!", quote = True)
+    reply_text = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...!", quote = True)
     try:
         post_message = await message.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as e:
@@ -17,16 +17,16 @@ async def channel_post(client: Client, message: Message):
         post_message = await message.copy(chat_id = client.db_channel.id, disable_notification=True)
     except Exception as e:
         print(e)
-        await reply_text.edit_text("Something went Wrong..!")
+        await reply_text.edit_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ...!")
         return
     converted_id = post_message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
 
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Copy URL", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ ᴄᴏᴘʏ ᴜʀʟ ♻️", url=f'{link}')]])
 
-    await reply_text.edit(f"<b>Here is your link</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
@@ -41,7 +41,7 @@ async def new_post(client: Client, message: Message):
     string = f"get-{converted_id}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Copy URL", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ ᴄᴏᴘʏ ᴜʀ ♻️ʟ", url=f'{link}')]])
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
