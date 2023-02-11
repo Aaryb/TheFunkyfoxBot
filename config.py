@@ -11,7 +11,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "5600320195:AAEFUZsFWeMK8TtQRDBRjROIdlly
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001682891018"))
 OWNER_ID = int(os.environ.get("OWNER_ID", "6196151348")) 
 DB_URI = os.environ.get("DATABASE_URL", "postgres://rtzsspzt:DLuJvx8TQGqYqt0XKR9CDnLZmRs6UMr3@berry.db.elephantsql.com/rtzsspzt")
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "https://t.me/TeleBotsUpdates"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 BOT_WORKERS = int(os.environ.get("BOT_WORKERS", "4"))
 
 
