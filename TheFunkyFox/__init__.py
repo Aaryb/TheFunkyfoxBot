@@ -1,16 +1,15 @@
 import asyncio
 import logging
 import time
-import pyrogram
+import config
 from importlib import import_module
 from os import environ, getenv, listdir, path
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from pyrogram import Client
-#from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, SUDO_USERS
-import config
+
 
 loop = asyncio.get_event_loop()
-#pyrogram.dotenv.load_dotenv()
+load_dotenv()
 boot = time.time()
 
 
