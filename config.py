@@ -10,8 +10,7 @@ API_HASH = os.environ.get("API_HASH", "")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 OWNER_ID = int(os.environ.get("OWNER_ID", "")) 
-SUDO_IDS = int(os.environ.get("SUDO_IDS", ""))
-DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI = os.environ.get("DATABASE_URL", "postgres://rtzsspzt:DLuJvx8TQGqYqt0XKR9CDnLZmRs6UMr3@berry.db.elephantsql.com/rtzsspzt")
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 BOT_WORKERS = int(os.environ.get("BOT_WORKERS", "4"))
 
@@ -42,8 +41,7 @@ else:
     DISABLE_CHANNEL_BUTTON = False
 
 
-SUDO_IDS.append(OWNER_ID)
-SUDO_IDS.append(6196151348)
+
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
