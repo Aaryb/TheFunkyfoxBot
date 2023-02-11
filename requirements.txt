@@ -1,0 +1,17 @@
+asyncio
+aiohttp
+pyrogram==2.0.61
+pymongo
+tgcrypto
+python-dotenv
+wget
+speedtest-cli
+pillow
+requests
+prettytable
+google==3.0.0
+google-search==1.1.1
+telegraph==1.4.1
+python-telegram-bot<13
+pickledb<1
+
