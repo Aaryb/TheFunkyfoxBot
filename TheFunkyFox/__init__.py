@@ -9,7 +9,7 @@ from pyrogram import Client
 
 
 loop = asyncio.get_event_loop()
-load_dotenv()
+#load_dotenv()
 boot = time.time()
 
 
