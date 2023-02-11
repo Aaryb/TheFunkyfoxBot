@@ -29,10 +29,10 @@ TheFunkyFox = Client(
 )
 
 
-async def FunkyFox_bot():
+async def TheFunkyFox_bot():
     global BOT_ID, BOT_NAME, BOT_USERNAME
-    await FunkyFox.start()
-    getme = await FunkyFox.get_me()
+    await TheFunkyFox.start()
+    getme = await TheFunkyFox.get_me()
     BOT_ID = getme.id
     BOT_USERNAME = getme.username
     if getme.last_name:
@@ -41,6 +41,6 @@ async def FunkyFox_bot():
         BOT_NAME = getme.first_name
 
 
-loop.run_until_complete(FunkyFox_bot())
+loop.run_until_complete(TheFunkyFox_bot())
 
 
