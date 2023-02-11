@@ -1,34 +1,62 @@
 {
-    "name": "ɴᴀᴛᴀsʜᴀ",
-    "logo": "https://te.legra.ph/file/086426b04c04a3c16f558.jpg",
-    "description": "ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴀɴᴀɢᴇᴍᴇɴʀ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ sᴜᴍɪᴛ ʏᴀᴅᴀᴠ.",
-    "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/Sumit0045/NibbiMusic",
-    "stack": "container",
-    "env": {
-        "BOT_USERNAME": {
-            "description": "𝙵𝚒𝚕𝚕 𝚠𝚒𝚝𝚑 𝚢𝚘𝚞𝚛 𝚋𝚘𝚝 𝚞𝚜𝚎𝚛𝚗𝚊𝚖𝚎 𝚏𝚛𝚘𝚖 @BotFather 𝚋𝚞𝚝 𝚠𝚒𝚝𝚑𝚘𝚞𝚝 𝚞𝚜𝚒𝚗𝚐 '@' 𝚜𝚢𝚖𝚋𝚘𝚕",
-            "required": true 
-        },
-        "BOT_TOKEN": {
-            "description": "𝙿𝚞𝚝 𝙱𝚘𝚝 𝚃𝚘𝚔𝚎𝚗 𝙾𝚏 𝚈𝚘𝚞𝚛 𝙱𝚘𝚝",
-            "required": true
-        },       
-        "SUDO_USERS": {
-            "description": "𝚂𝚞𝚍𝚘 𝚞𝚜𝚎𝚛𝚜",
-            "required": true
-        },
-         "OWNER_ID": {
-            "description": "𝙾𝚠𝚗𝚎𝚛 𝚒𝚍",
-            "required": true
-        }
+  "name": "Devil File Sharing Bot",
+  "description": "file sharing bot store posts and it can access by special links",
+  "keywords": [
+    "telegram",
+    "file",
+    "sharing"
+  ],
+  "repository": "https://github.com/rakeshyt/DevilFilesStore",
+  "env": {
+    "TG_BOT_TOKEN": {
+      "description": "Your Bot token, Get it from @Botfather",
+      "required": true,
+      "value": ""
     },
-    "buildpacks": [
+    "OWNER_ID": {
+      "description": "An integer of consisting of your owner ID",
+      "required": true,
+      "value": "5038784553"
+    },
+    "APP_ID":{
+      "description": "your app id, take it from my.telegram.org",
+      "required": true,
+      "value": "13292294"
+    },
+    "API_HASH":{
+      "description": "your api hash, take it from my.telegram.org",
+      "required": true,
+      "value": "68cf86881e7d9e706a3c886471ffdc21"
+    },
+    "CHANNEL_ID":{
+      "description": "make a channel (database channel), then make the bot as admin in channel, and it's id",
+      "required": true,
+      "value": "-1001274210298"
+    },
+    "ADMINS": {
+      "description": "Admins id they can only create links, otherwise leave blank",
+      "required": false,
+      "value": "5038784553 1442442077"
+    }
+  },
+  "addons": [
+    {
+    "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "buildpacks": [
     {
       "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
-  ]
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
+
