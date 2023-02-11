@@ -4,7 +4,7 @@ import time
 import config
 from importlib import import_module
 from os import environ, getenv, listdir, path
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from pyrogram import Client
 
 
