@@ -4,20 +4,32 @@ from pyrogram import Client, filters, __version__, enums
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
+from TheFunkyFox import TheFunkyFox as bot
+from config import SUDO_IDS, OWNER_ID, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from TheFunkyFox.modules.helper_func import subscribed, encode, decode, get_messages
+from TheFunkyFox.database.sql import add_user, query_msg, full_userbase
 
-from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, OWNER_ID, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
-from helper_func import subscribed, encode, decode, get_messages
-from database.sql import add_user, query_msg, full_userbase
 
+# ---------------------- ᴛʜᴇ-ғᴜɴᴋʏ-ғᴏx-ʙᴏᴛ-ᴛᴇxᴛ ---------------------- #
 
-#=====================================================================================##
+WAIT_MSG = """"<b>ᴘʀᴏᴄᴇssɪɴɢ ...</b>"""
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+REPLY_ERROR = """<code>ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ᴏᴜᴛ ᴀɴʏ sᴘᴀᴄᴇs.</code>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
+START_MSG = """
+ʜᴇʟʟᴏ {first}\n
+๏ ɪ ᴀᴍ ᴛʜᴇ ғᴜɴᴋʏ ғᴏx ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs
+๏ ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘᴏsᴛs ᴀɴᴅ ᴅᴏᴄᴜᴍᴇɴᴛs ᴀɴᴅ ɪᴛ ᴄᴀɴ ᴀᴄᴄᴇss ʙʏ sᴘᴇᴄɪᴀʟ ʟɪɴᴋs 
 
-#=====================================================================================##
+๏ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ ᴀʟʟ ᴛʜᴇ ʟᴀᴛᴇsᴛ ᴜᴘᴅᴀᴛᴇs.
+"""
+
+FORCE_MSG = """
+ʜᴇʏ ʜᴀɴᴅsᴏᴍᴇ {first} \n
+ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ʏᴏᴜ'ᴠᴇ ɴᴏᴛ ᴊᴏɪɴᴇᴅ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ʏᴇᴛ, ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴍᴇ ᴛʜᴇɴ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴀɴᴅ sᴛᴀʀᴛ ᴍᴇ ᴀɢᴀɪɴ !
+"""
+
+# ---------------------- ᴛʜᴇ-ғᴜɴᴋʏ-ғᴏx-ʙᴏᴛ-ᴛᴇxᴛ ---------------------- #
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -57,11 +69,11 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("Something went wrong..!")
+            await message.reply_text("» sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ..!")
             return
         await temp_msg.delete()
 
@@ -90,8 +102,12 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton("🍒 sᴜᴘᴘᴏʀᴛ", url = "https://t.me/TeleBotService"),
+                    InlineKeyboardButton("🍻 ᴜᴘᴅᴀᴛᴇs", url = "https://t.me/TeleBotsUpdates")
+                ],
+                [
+                    InlineKeyboardButton("🔐 ᴀʙᴏᴜᴛ", callback_data = "about"),
+                    InlineKeyboardButton("♻️ ᴄʟᴏsᴇ", callback_data = "close")
                 ]
             ]
         )
@@ -114,7 +130,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Join Channel",
+                "ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ",
                 url = client.invitelink)
         ]
     ]
@@ -122,7 +138,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = 'ᴛʀʏ ᴀɢᴀɪɴ',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
@@ -147,7 +163,7 @@ async def not_joined(client: Client, message: Message):
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
+    await msg.edit(f"{len(users)} | ᴜsᴇʀs ᴀʀᴇ ᴜsɪɴɢ ᴛʜɪs ʙᴏᴛ")
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
@@ -160,7 +176,7 @@ async def send_text(client: Bot, message: Message):
         deleted = 0
         unsuccessful = 0
         
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
+        pls_wait = await message.reply("<i> ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ᴍᴇssᴀɢᴇ.. \nᴛʜɪs ᴡɪʟʟ ᴛᴀᴋᴇ sᴏᴍᴇ ᴛɪᴍᴇ</i>")
         for row in query:
             chat_id = int(row[0])
             try:
@@ -179,13 +195,13 @@ async def send_text(client: Bot, message: Message):
                 pass
             total += 1
         
-        status = f"""<b><u>Broadcast Completed</u>
+        status = f"""<b><u>🍒 ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</u>
 
-Total Users: <code>{total}</code>
-Successful: <code>{successful}</code>
-Blocked Users: <code>{blocked}</code>
-Deleted Accounts: <code>{deleted}</code>
-Unsuccessful: <code>{unsuccessful}</code></b>"""
+🔐 ᴛᴏᴛᴀʟ ᴜsᴇʀs ➠ <code>{total}</code>
+🍻 sᴜᴄᴄᴇssғᴜʟʟ.➠ <code>{successful}</code>
+🍒 ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs ➠ <code>{blocked}</code>
+♻️ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ➠ <code>{deleted}</code>
+🐝 ᴜɴsᴜᴄᴄᴇssғᴜʟʟ ➠ <code>{unsuccessful}</code></b>"""
         
         return await pls_wait.edit(status)
 
