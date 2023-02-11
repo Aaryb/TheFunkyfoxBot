@@ -20,18 +20,18 @@ logging.basicConfig(
 
 
 
-Natasha = Client(
-    ":Natasha:",
+TheFunkyFox = Client(
+    ":TheFunkyFox:",
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=config.BOT_TOKEN,
 )
 
 
-async def Natasha_bot():
+async def FunkyFox_bot():
     global BOT_ID, BOT_NAME, BOT_USERNAME
-    await Natasha.start()
-    getme = await Natasha.get_me()
+    await FunkyFox.start()
+    getme = await FunkyFox.get_me()
     BOT_ID = getme.id
     BOT_USERNAME = getme.username
     if getme.last_name:
@@ -40,6 +40,6 @@ async def Natasha_bot():
         BOT_NAME = getme.first_name
 
 
-loop.run_until_complete(Natasha_bot())
+loop.run_until_complete(FunkyFox_bot())
 
 
