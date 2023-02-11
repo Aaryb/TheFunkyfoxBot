@@ -1,3 +1,4 @@
+dotenv
 pyrogram==2.0.97
 pyromod==2.0.0
 tgcrypto== 1.2.5
