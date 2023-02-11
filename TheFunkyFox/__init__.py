@@ -10,7 +10,7 @@ from pyrogram import Client
 import config
 
 loop = asyncio.get_event_loop()
-pyrogram.dotenv.load_dotenv()
+#pyrogram.dotenv.load_dotenv()
 boot = time.time()
 
 
