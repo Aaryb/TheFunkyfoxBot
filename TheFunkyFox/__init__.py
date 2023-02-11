@@ -6,7 +6,7 @@ from importlib import import_module
 from os import environ, getenv, listdir, path
 #from dotenv import load_dotenv
 from pyrogram import Client
-from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, SUDO_USERS
+#from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, SUDO_USERS
 import config
 
 loop = asyncio.get_event_loop()
@@ -23,8 +23,8 @@ logging.basicConfig(
 
 TheFunkyFox = Client(
     ":TheFunkyFox:",
-    api_id=API_ID,
-    api_hash=API_HASH,
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
 )
 
