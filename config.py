@@ -7,11 +7,11 @@ from logging.handlers import RotatingFileHandler
 
 APP_ID = int(os.environ.get("APP_ID", "15523618"))
 API_HASH = os.environ.get("API_HASH", "8979514968543c31a37a3ed8a0726d83")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-OWNER_ID = int(os.environ.get("OWNER_ID", "")) 
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5600320195:AAEFUZsFWeMK8TtQRDBRjROIdllyz9_GZAI")
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001682891018"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6196151348")) 
 DB_URI = os.environ.get("DATABASE_URL", "postgres://rtzsspzt:DLuJvx8TQGqYqt0XKR9CDnLZmRs6UMr3@berry.db.elephantsql.com/rtzsspzt")
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1001637830162"))
 BOT_WORKERS = int(os.environ.get("BOT_WORKERS", "4"))
 
 
