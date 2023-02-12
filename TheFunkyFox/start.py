@@ -1,12 +1,12 @@
 import os
 import asyncio
+from bot import Bot
 from pyrogram import Client, filters, __version__, enums
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
-from TheFunkyFox import TheFunkyFox as Bot
 from config import OWNER_ID, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
-from TheFunkyFox.modules.helper_func import subscribed, encode, decode, get_messages
+from TheFunkyFox.helper_func import subscribed, encode, decode, get_messages
 from TheFunkyFox.database.sql import add_user, query_msg, full_userbase
 
 
