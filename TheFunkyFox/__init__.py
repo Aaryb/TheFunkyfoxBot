@@ -1,38 +1,24 @@
-import sys
-import asyncio
-import logging
-import time
-import config
 import pyromod.listen
-from datetime import datetime
-from config import LOGGER, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID
-from importlib import import_module
-from os import environ, getenv, listdir, path
 from pyrogram import Client, enums
 from pyrogram.enums import ParseMode
+import sys
+from datetime import datetime
 
+from config import API_HASH, APP_ID, LOGGER, BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID
 
-
-loop = asyncio.get_event_loop()
-
-boot = time.time()
-
-
-logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
-    level=logging.INFO,
-)
-
-
-
-TheFunkyFox = Client(
-    ":TheFunkyFox:",
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-    bot_token=config.BOT_TOKEN,
-)
-
-self.LOGGER = LOGGER
+class TheFunkyFox(Client):
+    def __init__(self):
+        super().__init__(
+            name="TheFunkyFox",
+            api_hash=API_HASH,
+            api_id=APP_ID,
+            plugins={
+                "root": "modules"
+            },
+            workers=TG_BOT_WORKERS,
+            bot_token=BOT_TOKEN
+        )
+        self.LOGGER = LOGGER
 
     async def start(self):
         await super().start()
@@ -70,19 +56,3 @@ self.LOGGER = LOGGER
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
-
-async def TheFunkyFox_bot():
-    global BOT_ID, BOT_NAME, BOT_USERNAME
-    await TheFunkyFox.start()
-    getme = await TheFunkyFox.get_me()
-    BOT_ID = getme.id
-    BOT_USERNAME = getme.username
-    if getme.last_name:
-        BOT_NAME = getme.first_name + " " + getme.last_name
-    else:
-        BOT_NAME = getme.first_name
-
-
-loop.run_until_complete(TheFunkyFox_bot())
-
-
