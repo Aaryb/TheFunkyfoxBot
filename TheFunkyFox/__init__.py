@@ -13,7 +13,7 @@ class TheFunkyFox(Client):
             api_hash=API_HASH,
             api_id=APP_ID,
             plugins={
-                "root": "TheFunkyFox/modules"
+                "root": "TheFunkyFox.modules"
             },
             workers=BOT_WORKERS,
             bot_token=BOT_TOKEN
