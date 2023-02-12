@@ -13,8 +13,8 @@ class TheFunkyFox(Client):
             api_hash=API_HASH,
             api_id=APP_ID,
             
-            workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN
+            workers=BOT_WORKERS,
+            bot_token=BOT_TOKEN
         )
         self.LOGGER = LOGGER
 
