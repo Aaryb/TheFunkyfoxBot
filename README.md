@@ -6,11 +6,6 @@
 <p align="center">
 
 
-<p align="center">
-<b> 𝗗𝗘𝗣𝗟𝗢𝗬 𝗠𝗘𝗧𝗛𝗢𝗗</b>
-</p>
-
-
 <h3 align="center">
     ─ ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ ─
 </h3>
