@@ -1,10 +1,10 @@
 import asyncio
+from bot import Bot
 from pyrogram import filters, Client, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
-from TheFunkyFox import TheFunkyFox as Bot
 from config import OWNER_ID, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
-from TheFunkyFox.modules.helper_func import encode
+from TheFunkyFox.helper_func import encode
 
 
 @Bot.on_message(filters.private & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink']))
