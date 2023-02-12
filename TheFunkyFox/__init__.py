@@ -6,10 +6,10 @@ from datetime import datetime
 
 from config import API_HASH, API_ID, LOGGER, BOT_TOKEN, BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID
 
-class Bot(Client):
+class TheFunkyFox(Client):
     def __init__(self):
         super().__init__(
-            name="Bot",
+            name="TheFunkyFox",
             api_hash=API_HASH,
             api_id=APP_ID,
             
