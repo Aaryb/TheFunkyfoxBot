@@ -1,1 +1,1 @@
-worker: python -m TheFunkyFox
+worker: python3 main.py
