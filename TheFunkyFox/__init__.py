@@ -7,17 +7,18 @@ from datetime import datetime
 from config import LOGGER, FORCE_SUB_CHANNEL, CHANNEL_ID
 
 Natasha = Client(
+def __init__(self): 
+super().__init__(
     ":Natasha:",
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
     workers=config.BOT_WORKERS
-)
+),)
 
 
     
-def __init__(self): 
-super().__init__()       
+       
 self.LOGGER = LOGGER
 async def start(self):
    await super().start()        
