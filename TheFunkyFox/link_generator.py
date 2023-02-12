@@ -1,8 +1,8 @@
-from TheFunkyFox import TheFunkyFox as Bot
+from bot import Bot
 from config import OWNER_ID
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from TheFunkyFox.modules.helper_func import encode, get_message_id
+from TheFunkyFox.helper_func import encode, get_message_id
 
 
 
