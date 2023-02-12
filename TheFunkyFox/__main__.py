@@ -19,7 +19,7 @@ class TheFunkyFox(Client):
     
 )
 
-    :
+    
 
 
         self.LOGGER = LOGGER
