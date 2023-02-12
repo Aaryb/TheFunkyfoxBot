@@ -16,7 +16,7 @@ Natasha = Client(
 
 
     
-
+def __init__(self):        
 self.LOGGER = LOGGER
 async def start(self):
    await super().start()        
