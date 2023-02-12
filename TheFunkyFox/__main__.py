@@ -8,7 +8,7 @@ loop = asyncio.get_event_loop()
 
 async def sumit_boot():
     for all_module in ALL_MODULES:
-        importlib.import_module("Natasha.modules." + all_module)
+        importlib.import_module("TheFunkyFox.modules." + all_module)
     print("────────────BOT START────────────")
     await idle()
     print("GoodBye! Stopping Bot")
