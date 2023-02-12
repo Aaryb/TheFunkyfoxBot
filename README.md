@@ -2,10 +2,13 @@
 <b> ˹ᴛʜᴇ ғᴜɴҡʏ ғσꭙ˼ 🇷🇺</b>
 </p>
 
-<p align="center"><a href="https://t.me/TechQuard"><img src="https://telegra.ph/file/3443b024b47952fd9aedf.jpg" width="300"></a></p>
+<p align="center"><a href="https://t.me/TeleBotsUpdate"><img src="https://telegra.ph/file/3443b024b47952fd9aedf.jpg" width="300"></a></p>
 <p align="center">
 
 
+<p align="center">
+<b> 𝗗𝗘𝗣𝗟𝗢𝗬 𝗠𝗘𝗧𝗛𝗢𝗗</b>
+</p>
 
 
 <h3 align="center">
