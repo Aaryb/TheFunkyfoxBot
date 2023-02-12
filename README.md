@@ -2,7 +2,7 @@
 <b> ˹ᴛʜᴇ ғᴜɴҡʏ ғσꭙ˼ 🇷🇺</b>
 </p>
 
-<p align="center"><a href="https://t.me/TechQuard"><img src="https://te.legra.ph/file/5307b3db65b6b778a747f.jpg" width="300"></a></p>
+<p align="center"><a href="https://t.me/TechQuard"><img src="https://telegra.ph/file/3443b024b47952fd9aedf.jpg" width="300"></a></p>
 <p align="center">
 
 
