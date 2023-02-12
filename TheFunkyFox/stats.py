@@ -1,7 +1,7 @@
-from TheFunkyFox import TheFunkyFox as Bot
+from bot import Bot
 from pyrogram.types import Message
 from pyrogram import filters
-from TheFunkyFox.modules.helper_func import get_readable_time
+from TheFunkyFox.helper_func import get_readable_time
 
 USER_REPLY_TEXT = "or bhai kya haal hai "
 
