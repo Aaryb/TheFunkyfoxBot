@@ -1,27 +1,30 @@
+import sys
+import config
 import pyromod.listen
 from pyrogram import Client, enums
 from pyrogram.enums import ParseMode
-import sys
 from datetime import datetime
+from config import LOGGER, FORCE_SUB_CHANNEL, CHANNEL_ID
 
-from config import API_HASH, API_ID, LOGGER, BOT_TOKEN, BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID
-
-class TheFunkyFox(Client):
     def __init__(self):
         super().__init__(
-            name="TheFunkyFox",
-            api_hash=API_HASH,
-            api_id=API_ID,
-            plugins={
-                "root": "modules"
-            },
-            workers=BOT_WORKERS,
-            bot_token=BOT_TOKEN
-        )
+          TheFunkyFox = Client(
+           ":TheFunkyFox:",
+           api_id=config.API_ID,
+           api_hash=config.API_HASH,
+           bot_token=config.BOT_TOKEN,
+           plugins={"root": "modules"},
+           workers=config.BOT_WORKERS,
+    
+),)
+
+    :
+
+
         self.LOGGER = LOGGER
 
     async def start(self):
-        await super().start()
+        await super().start()        
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
 
