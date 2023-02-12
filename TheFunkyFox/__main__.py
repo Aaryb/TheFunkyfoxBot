@@ -6,18 +6,14 @@ from pyrogram.enums import ParseMode
 from datetime import datetime
 from config import LOGGER, FORCE_SUB_CHANNEL, CHANNEL_ID
 
-class TheFunkyFox(Client):
-    def __init__(self):
-        super().__init__(
-          
-           ":TheFunkyFox:",
-           api_id=config.API_ID,
-           api_hash=config.API_HASH,
-           bot_token=config.BOT_TOKEN,
-           plugins={"root": "TheFunkyFox/modules"},
-           workers=config.BOT_WORKERS,
-    
+Natasha = Client(
+    ":Natasha:",
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
+    bot_token=config.BOT_TOKEN,
+    workers=config.BOT_WORKERS
 )
+
 
     
 
