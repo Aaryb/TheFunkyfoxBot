@@ -6,7 +6,7 @@ from pyrogram.enums import ParseMode
 from datetime import datetime
 from config import LOGGER, FORCE_SUB_CHANNEL, CHANNEL_ID
 
-Natasha = Client(
+class NatashaClient():
 def __init__(self): 
 super().__init__(
     ":Natasha:",
@@ -14,7 +14,7 @@ super().__init__(
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
     workers=config.BOT_WORKERS
-),)
+)
 
 
     
