@@ -25,7 +25,7 @@ START_MSG = """
 """
 
 FORCE_MSG = """
-ʜᴇʏ ʜᴀɴᴅsᴏᴍᴇ {first} \n
+ʜᴇʏ {first} \n
 ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ʏᴏᴜ'ᴠᴇ ɴᴏᴛ ᴊᴏɪɴᴇᴅ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ʏᴇᴛ, ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴍᴇ ᴛʜᴇɴ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴀɴᴅ sᴛᴀʀᴛ ᴍᴇ ᴀɢᴀɪɴ !
 """
 
@@ -102,11 +102,11 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🍒 sᴜᴘᴘᴏʀᴛ", url = "https://t.me/TeleBotService"),
-                    InlineKeyboardButton("🍻 ᴜᴘᴅᴀᴛᴇs", url = "https://t.me/TeleBotsUpdates")
-                ],
-                [
+                    InlineKeyboardButton("🍒 ᴜᴘᴅᴀᴛᴇs", url = "https://t.me/TheMoviesUpdate"),
                     InlineKeyboardButton("🔐 ᴀʙᴏᴜᴛ", callback_data = "about"),
+                    InlineKeyboardButton("🍻 sᴜᴘᴘᴏʀᴛ", url = "https://t.me/TheMoviesRequests")
+                ],
+                [                    
                     InlineKeyboardButton("♻️ ᴄʟᴏsᴇ", callback_data = "close")
                 ]
             ]
