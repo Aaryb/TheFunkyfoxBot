@@ -9,10 +9,10 @@ API_ID = int(getenv("API_ID", "18719789"))
 API_HASH = getenv("API_HASH", "a03c27be3e14aac40f62cb4e95207fae")
 BOT_TOKEN = getenv("BOT_TOKEN", "6056505972:AAGTyNuBPfiDsOEVPUO6L3_HqRh8bOt6_Xc")
 CHANNEL_ID = int(getenv("CHANNEL_ID", "-1001898451453"))
-OWNER_ID = list(map(int, getenv("SUDO_USERS", "5917071362 6018550523 5807975896 5416887843").split()))
+OWNER_ID = list(map(int, getenv("SUDO_USERS", "5709622852 5917071362 6018550523 5807975896 5416887843").split()))
 DB_URI = getenv("DATABASE_URL", "postgres://rtzsspzt:DLuJvx8TQGqYqt0XKR9CDnLZmRs6UMr3@berry.db.elephantsql.com/rtzsspzt")
 FORCE_SUB_CHANNEL = int(getenv("FORCE_SUB_CHANNEL", "-1001857904357"))
-BOT_WORKERS = int(getenv("BOT_WORKERS", "4"))
+BOT_WORKERS = int(getenv("BOT_WORKERS", "5"))
 
 
 default_custom_caption = """
