@@ -1,7 +1,7 @@
 from bot import Bot
 from config import OWNER_ID
 from pyrogram import Client, filters, enums
-from TheHanCock.stats import get_shortlink
+from ThefunkyFox.stats import get_shortlink
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from TheFunkyFox.helper_func import encode, get_message_id
 
