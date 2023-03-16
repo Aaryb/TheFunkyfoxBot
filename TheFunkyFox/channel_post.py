@@ -1,5 +1,6 @@
 import asyncio
 from bot import Bot
+from TheFunkyFox.stats import get_shortlink
 from pyrogram import filters, Client, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
