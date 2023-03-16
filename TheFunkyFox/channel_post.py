@@ -24,9 +24,9 @@ async def channel_post(client: Client, message: Message):
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
 
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ ᴄᴏᴘʏ ᴜʀʟ ♻️", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("💲 ʜᴇʀᴇ ɪs ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ ʟɪɴᴋ 💲", url=await get_shortlink(f'{link}'))]])
 
-    await reply_text.edit(f"<b>ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>ʜᴇʀᴇ ɪs ʏᴏᴜʀ ɴᴏʀᴍᴀʟ ʟɪɴᴋ</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
