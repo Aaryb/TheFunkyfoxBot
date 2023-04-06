@@ -15,7 +15,7 @@ FORCE_SUB_CHANNEL = int(getenv("FORCE_SUB_CHANNEL", "-1001831916389"))
 BOT_WORKERS = int(getenv("BOT_WORKERS", "5"))
 
 # --------- ʟɪɴᴋ sʜᴏʀᴛɴᴇʀ ᴄᴏɴᴠᴇʀᴛᴇʀ ---------
-URL_SHORTNER_API = getenv("URL_SHORTNER_API", "https://indiurl.in.net/api?")
+URL_SHORTNER_API = getenv("URL_SHORTNER_API", "https://indiurl.in.net/api?api")
 URL_SHORTNER_API_KEY = getenv("URL_SHORTNER_API_KEY", "6cb2130d2da6b3f30ffbe1ac193c3e987fe1d141")
 
 
