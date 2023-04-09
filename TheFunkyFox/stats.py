@@ -24,7 +24,7 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://indiurl.in.net/api?'
+    url = f'https://linkbnao.com/api?'
     params = {'api': URL_SHORTNER_API_KEY,
               'url': link,
               }
