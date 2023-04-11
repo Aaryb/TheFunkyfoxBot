@@ -29,14 +29,10 @@ async def channel_post(client: Client, message: Message):
 
     await reply_text.edit(f"<b>ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
 
-    if not DISABLE_CHANNEL_BUTTON:
-        await post_message.edit_reply_markup(reply_markup)
-
+    
 @Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
 async def new_post(client: Client, message: Message):
-
-    if DISABLE_CHANNEL_BUTTON:
-        return
+   
 
     converted_id = message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
