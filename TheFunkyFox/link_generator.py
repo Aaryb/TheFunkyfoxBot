@@ -6,7 +6,7 @@ from TheFunkyFox.helper_func import encode, get_message_id
 
 ADMINS = [5709622852]
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
+@Bot.on_message(filters.private & filters.user & filters.command('batch'))
 async def batch(client: Client, message: Message):
     while True:
         try:
