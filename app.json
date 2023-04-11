@@ -19,7 +19,17 @@
       "value": ""
     },
     "CHANNEL_ID":{
-      "description": "make a channel (database channel), then make the bot as admin in channel, and it's id",
+      "description": "make a channel (database channel), then make the bot as admin in channel, and it's channel id",
+      "required": true,
+      "value": ""
+    },
+    "DATABASE_URL": {
+      "description": "elephant sql data base",
+      "required": true,
+      "value": ""
+    }
+    "FORCE_SUB_CHANNEL": {
+      "description": "here force channel or group channel id ",
       "required": true,
       "value": ""
     }
