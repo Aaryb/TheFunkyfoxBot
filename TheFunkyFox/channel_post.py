@@ -7,7 +7,8 @@ from config import CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from TheFunkyFox.helper_func import encode
 
 
-@Bot.on_message(filters.private & filters.user & ~filters.command(['start','users','broadcast','batch','genlink']))
+
+@Bot.on_message(filters.command(['start','users','broadcast','batch','genlink'], prefixes=["/", "!"]))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...!", quote = True)
     try:
