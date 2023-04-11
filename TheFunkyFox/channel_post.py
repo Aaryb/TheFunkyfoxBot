@@ -8,7 +8,7 @@ from TheFunkyFox.helper_func import encode
 
 
 
-@Bot.on_message(filters.command(['start','users','broadcast','batch','genlink'], prefixes=["/", "!"]))
+#@Bot.on_message(filters.command(['start','users','broadcast','batch','genlink'], prefixes=["/", "!"]))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...!", quote = True)
     try:
