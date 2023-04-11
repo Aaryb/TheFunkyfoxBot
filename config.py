@@ -7,16 +7,16 @@ from logging.handlers import RotatingFileHandler
 
 API_ID = int(getenv("API_ID", "18719789"))
 API_HASH = getenv("API_HASH", "a03c27be3e14aac40f62cb4e95207fae")
-BOT_TOKEN = getenv("BOT_TOKEN", "6056505972:AAETWRt8vtgAUxbhwok0kwUWZTSpFTFJK-U")
-CHANNEL_ID = int(getenv("CHANNEL_ID", "-1001957145327"))
-OWNER_ID = list(map(int, getenv("SUDO_USERS", "5709622852 5917071362 6018550523 5807975896 5416887843").split()))
-DB_URI = getenv("DATABASE_URL", "postgres://rtzsspzt:DLuJvx8TQGqYqt0XKR9CDnLZmRs6UMr3@berry.db.elephantsql.com/rtzsspzt")
-FORCE_SUB_CHANNEL = int(getenv("FORCE_SUB_CHANNEL", "-1001831916389"))
+BOT_TOKEN = getenv("BOT_TOKEN", "")
+CHANNEL_ID = int(getenv("CHANNEL_ID", ""))
+OWNER_ID = list(map(int, getenv("OWNER_ID", "").split()))
+DB_URI = getenv("DATABASE_URL", "")
+FORCE_SUB_CHANNEL = int(getenv("FORCE_SUB_CHANNEL", ""))
 BOT_WORKERS = int(getenv("BOT_WORKERS", "5"))
 
 # --------- ʟɪɴᴋ sʜᴏʀᴛɴᴇʀ ᴄᴏɴᴠᴇʀᴛᴇʀ ---------
-URL_SHORTNER_API = getenv("URL_SHORTNER_API", "https://linkbnao.com/api?api")
-URL_SHORTNER_API_KEY = getenv("URL_SHORTNER_API_KEY", "c2d86423e4383224187719bc8461f19c797c6dfd")
+URL_SHORTNER_API = getenv("URL_SHORTNER_API", "")
+URL_SHORTNER_API_KEY = getenv("URL_SHORTNER_API_KEY", "")
 
 
 default_custom_caption = """
