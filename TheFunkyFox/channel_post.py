@@ -3,11 +3,11 @@ from bot import Bot
 from pyrogram import filters, Client, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
-from config import OWNER_ID, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
+from config import CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from TheFunkyFox.helper_func import encode
 
 
-@Bot.on_message(filters.private & filters.user(OWNER_ID) & ~filters.command(['start','users','broadcast','batch','genlink']))
+@Bot.on_message(filters.private & filters.user & ~filters.command(['start','users','broadcast','batch','genlink']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...!", quote = True)
     try:
