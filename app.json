@@ -27,7 +27,7 @@
       "description": "elephant sql data base",
       "required": true,
       "value": ""
-    }
+    },
     "FORCE_SUB_CHANNEL": {
       "description": "here force channel or group channel id ",
       "required": true,
