@@ -6,7 +6,7 @@
     "file",
     "sharing"
   ],
-  "repository": "https://github.com/rakeshyt/DevilFilesStore",
+  "repository": "https://github.com/Sumit0045/TheFunkyfoxBot",
   "env": {
     "BOT_TOKEN": {
       "description": "Your Bot token, Get it from @Botfather",
